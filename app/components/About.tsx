@@ -1,0 +1,123 @@
+"use client";
+
+import { useLanguage } from '../context/LanguageContext';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+// Images pour le carrousel
+const carouselImages = [
+  {
+    src: '/images/sections/Home/images_animations/Image 1 - Finance de Developpement.webp',
+    alt: 'Finance de Développement'
+  },
+  {
+    src: '/images/sections/Home/images_animations/Image 2 - Ingenierie Financiere.webp',
+    alt: 'Ingénierie Financière'
+  },
+  {
+    src: '/images/sections/Home/images_animations/Image 3 - Politique Publique.webp',
+    alt: 'Politique Publique'
+  }
+];
+
+export default function About() {
+  const { t } = useLanguage();
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Auto-défilement des images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="about" className="bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Image Carousel Card */}
+          <div>
+            <div className="overflow-hidden shadow-2xl">
+              {/* Images en carousel - utilise grid pour empiler sans absolute */}
+              <div className="aspect-[4/3] grid">
+                {carouselImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`col-start-1 row-start-1 transition-opacity duration-1000 ease-in-out ${
+                      index === currentImage 
+                        ? 'opacity-100' 
+                        : 'opacity-0'
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Indicateurs de navigation - en dessous du carrousel */}
+              <div className="flex justify-center gap-2 py-4 bg-emerald-900/80">
+                {carouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImage(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === currentImage 
+                        ? 'bg-white w-6' 
+                        : 'bg-white/50 hover:bg-white/70 w-2'
+                    }`}
+                    aria-label={`Image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Text Side */}
+          <div className="space-y-6">
+            {/* Badge */}
+            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold tracking-wide uppercase">
+              {t.about.subtitle}
+            </span>
+            
+            {/* Title */}
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              {t.about.title}
+            </h2>
+            
+            {/* Descriptions */}
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-emerald-800">AGUIFA Dev Finance (ADF)</span> {t.about.description1}
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                {t.about.description2}
+              </p>
+            </div>
+
+            {/* CTA Link */}
+            <a
+              href="#expertise"
+              className="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-600 transition-colors group"
+            >
+              {t.about.knowMore}
+              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

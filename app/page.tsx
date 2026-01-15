@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
-import Expertise from './components/Expertise';
 import Values from './components/Values';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -31,7 +30,6 @@ export default function Home() {
           
           {/* Autres sections */}
           <div className="space-y-24 py-24">
-            <Expertise />
             <Values />
             <Contact />
           </div>

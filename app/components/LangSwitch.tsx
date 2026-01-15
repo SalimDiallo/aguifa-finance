@@ -1,11 +1,31 @@
 import { useLanguage } from '../context/LanguageContext';
 
-export default function LangSwitch() {
-    const { language, toggleLanguage } = useLanguage();
-    return (
-        <button onClick={toggleLanguage} className="flex items-center cursor-pointer gap-2 px-3 py-2 backdrop-blur-sm transition-all duration-300 group">
-            <span className="text-lg group-hover:scale-110 transition-transform">{language === 'fr' ? '🇫🇷' : '🇬🇧'}</span>
-            <span className=" text-sm font-semibold tracking-wide">{language === 'fr' ? 'FR' : 'EN'}</span>
-        </button>
-    );
+interface LangSwitchProps {
+  variant?: 'light' | 'dark';
+}
+
+export default function LangSwitch({ variant = 'dark' }: LangSwitchProps) {
+  const { language, toggleLanguage } = useLanguage();
+  
+  const isDark = variant === 'dark';
+  
+  return (
+    <button 
+      onClick={toggleLanguage} 
+      className={`
+        flex items-center gap-2 px-3 py-1.5 border transition-all duration-200
+        ${isDark 
+          ? 'border-slate-300 text-slate-700 hover:border-slate-500 hover:text-slate-900' 
+          : 'border-white/30 text-white/90 hover:border-white hover:text-white'
+        }
+      `}
+    >
+      <span className="text-xs font-medium tracking-wider uppercase">
+        {language === 'fr' ? 'FR' : 'EN'}
+      </span>
+      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  );
 }

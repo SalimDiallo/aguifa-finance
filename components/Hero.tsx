@@ -10,7 +10,7 @@ import LangSwitch from './LangSwitch';
 const heroSlides = [
   {
     id: 1,
-    image: 'https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: '/a.png',
     slideKey: 'slide1' as const,
   },
   {

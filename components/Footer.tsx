@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const quickLinks = [
     { href: '/', label: t.nav.home },
@@ -12,16 +12,15 @@ export default function Footer() {
     { href: '/expertise', label: t.nav.expertise },
     { href: '/team', label: t.nav.team },
     { href: '/projects', label: t.nav.projects },
-    { href: '/insights', label: t.nav.insights },
     { href: '/contact', label: t.nav.contact },
   ];
 
   const expertiseLinks = [
     { href: '/expertise#development', label: t.services.devFinance.title },
     { href: '/expertise#investment', label: t.services.investment.title },
+    { href: '/expertise#green', label: t.services.green.title },
     { href: '/expertise#digital', label: t.services.digital.title },
     { href: '/expertise#data', label: t.services.data.title },
-    { href: '/expertise#green', label: t.services.green.title },
   ];
 
   return (
@@ -46,9 +45,15 @@ export default function Footer() {
                 <div className="text-xs tracking-wider uppercase text-slate-400">Dev Finance</div>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-400 text-sm leading-relaxed mb-4">
               {t.footer.description}
             </p>
+            {/* Contact Info */}
+            <div className="space-y-1 text-xs text-slate-500">
+              <p>info@aguifa.org</p>
+              <p>+212 615 776 357</p>
+              <p>+224 626 904 564</p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -85,9 +90,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Social */}
+          {/* Locations & Social */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 text-slate-300 uppercase tracking-wider">{t.footer.followUs}</h3>
+            <h3 className="text-sm font-semibold mb-4 text-slate-300 uppercase tracking-wider">
+              {t.footer.offices}
+            </h3>
+            <div className="space-y-3 text-sm text-slate-400 mb-6">
+              <div>
+                <p className="text-slate-300 text-xs uppercase tracking-wide mb-1">{t.footer.morocco}</p>
+                <p>{t.contact.locations.moroccoShort}</p>
+              </div>
+              <div>
+                <p className="text-slate-300 text-xs uppercase tracking-wide mb-1">{t.footer.guinea}</p>
+                <p>{t.contact.locations.guineaShort}</p>
+              </div>
+            </div>
+            
+            <h3 className="text-sm font-semibold mb-3 text-slate-300 uppercase tracking-wider">{t.footer.followUs}</h3>
             <div className="flex gap-3">
               {['linkedin', 'twitter'].map((social) => (
                 <a

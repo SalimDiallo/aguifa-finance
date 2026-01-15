@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useState } from 'react';
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,19 +26,24 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      label: t.contact.address,
-      value: 'Dakar, Sénégal',
+      label: t.contact.offices.morocco,
+      value: t.contact.locations.moroccoShort,
+      href: null,
+    },
+    {
+      label: t.contact.offices.guinea,
+      value: t.contact.locations.guineaShort,
       href: null,
     },
     {
       label: t.contact.phone,
-      value: '+221 XX XXX XX XX',
-      href: 'tel:+221XXXXXXXX',
+      value: '+212 615 776 357',
+      href: 'tel:+212615776357',
     },
     {
       label: t.contact.emailContact,
-      value: 'contact@aguifa.com',
-      href: 'mailto:contact@aguifa.com',
+      value: 'info@aguifa.org',
+      href: 'mailto:info@aguifa.org',
     },
   ];
 
@@ -75,7 +80,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                    placeholder="Jean Dupont"
                   />
                 </div>
                 <div>
@@ -90,7 +94,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                    placeholder="jean@example.com"
                   />
                 </div>
               </div>
@@ -107,7 +110,6 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                  placeholder="Comment pouvons-nous vous aider ?"
                 />
               </div>
               
@@ -123,7 +125,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors resize-none text-sm"
-                  placeholder="Décrivez votre projet..."
+                  placeholder={t.contact.messagePlaceholder}
                 />
               </div>
               
@@ -170,13 +172,14 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-sm text-slate-600">Dakar, Sénégal</p>
-                <p className="text-xs text-slate-400">Afrique de l'Ouest</p>
+                <p className="text-sm text-slate-600">{t.contact.locations.moroccoShort}</p>
+                <p className="text-xs text-slate-400">{t.contact.locations.guineaShort}</p>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3">
+              <span className="text-xs text-slate-500 uppercase tracking-wide">{t.contact.followUs}</span>
               {['linkedin', 'twitter'].map((social) => (
                 <a
                   key={social}

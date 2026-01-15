@@ -3,7 +3,7 @@
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Values() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const values = [
     {
@@ -27,6 +27,10 @@ export default function Values() {
       number: '04',
     },
   ];
+
+  const quote = language === 'fr' 
+    ? 'Nous croyons en ce que nous disons et nous disons ce en quoi nous croyons.'
+    : 'We believe in what we say and we say what we believe.';
 
   return (
     <>
@@ -91,7 +95,7 @@ export default function Values() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <blockquote className="text-base lg:text-lg text-slate-600 font-light italic leading-relaxed">
-                We believe in what we say and we say what we believe.
+                {quote}
               </blockquote>
               <p className="text-xs text-slate-400 font-medium tracking-widest uppercase mt-4">
                 AGUIFA Dev Finance

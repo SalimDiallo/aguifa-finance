@@ -9,72 +9,32 @@ const services = [
   {
     id: 'development',
     icon: '/images/icon-dev-finance.png',
-    titleKey: 'developmentFinance',
-    descKey: 'developmentFinanceDesc',
+    serviceKey: 'devFinance',
   },
   {
     id: 'investment',
     icon: '/images/icon-investment.png',
-    titleKey: 'investmentCapital',
-    descKey: 'investmentCapitalDesc',
+    serviceKey: 'investment',
   },
   {
     id: 'digital',
     icon: '/images/icon-digital.png',
-    titleKey: 'digitalMsme',
-    descKey: 'digitalMsmeDesc',
+    serviceKey: 'digital',
   },
   {
     id: 'data',
     icon: '/images/icon-data.png',
-    titleKey: 'dataAnalytics',
-    descKey: 'dataAnalyticsDesc',
+    serviceKey: 'data',
   },
   {
     id: 'green',
     icon: '/images/icon-green.png',
-    titleKey: 'greenFinance',
-    descKey: 'greenFinanceDesc',
+    serviceKey: 'green',
   }
 ];
 
-// Traductions pour les services
-const serviceTranslations = {
-  fr: {
-    sectionTitle: 'Nos Domaines d\'Expertise',
-    sectionSubtitle: 'Des solutions financières sur mesure pour l\'Afrique',
-    developmentFinance: 'Finance de Développement',
-    developmentFinanceDesc: 'Nous accompagnons les gouvernements, institutions publiques et partenaires techniques dans la conception, la revue et l\'évaluation de politiques sectorielles et programmes de développement.',
-    investmentCapital: 'Investment & Private Capital',
-    investmentCapitalDesc: 'Conseil stratégique en structuration de fonds, levée de capitaux et accompagnement des investisseurs institutionnels dans leurs opérations en Afrique.',
-    digitalMsme: 'Digital Finance & MSME',
-    digitalMsmeDesc: 'Solutions innovantes de financement digital pour les micro, petites et moyennes entreprises africaines, favorisant l\'inclusion financière.',
-    dataAnalytics: 'Data & Analytics',
-    dataAnalyticsDesc: 'Exploitation de données et analyses avancées pour éclairer les décisions d\'investissement et optimiser la performance des portefeuilles.',
-    greenFinance: 'ESG & Green Finance',
-    greenFinanceDesc: 'Structuration de financements verts et durables alignés sur les critères ESG pour une croissance responsable du continent africain.',
-    learnMore: 'En savoir plus',
-  },
-  en: {
-    sectionTitle: 'Our Areas of Expertise',
-    sectionSubtitle: 'Tailored financial solutions for Africa',
-    developmentFinance: 'Development Finance',
-    developmentFinanceDesc: 'We support governments, public institutions and technical partners in the design, review and evaluation of sectoral policies and development programs.',
-    investmentCapital: 'Investment & Private Capital',
-    investmentCapitalDesc: 'Strategic advisory in fund structuring, capital raising and support for institutional investors in their African operations.',
-    digitalMsme: 'Digital Finance & MSME',
-    digitalMsmeDesc: 'Innovative digital financing solutions for African micro, small and medium enterprises, promoting financial inclusion.',
-    dataAnalytics: 'Data & Analytics',
-    dataAnalyticsDesc: 'Data exploitation and advanced analytics to inform investment decisions and optimize portfolio performance.',
-    greenFinance: 'ESG & Green Finance',
-    greenFinanceDesc: 'Structuring green and sustainable financing aligned with ESG criteria for responsible growth of the African continent.',
-    learnMore: 'Learn more',
-  }
-};
-
 export default function Services() {
-  const { language } = useLanguage();
-  const t = serviceTranslations[language as keyof typeof serviceTranslations] || serviceTranslations.fr;
+  const { t } = useLanguage();
   const [activeService, setActiveService] = useState<string | null>(null);
 
   // Services de gauche (indices 0, 1, 2)
@@ -99,14 +59,14 @@ export default function Services() {
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center px-4">
             <span className="inline-block text-xs font-medium tracking-widest text-white/60 uppercase mb-4">
-              Expertise
+              {t.expertise.subtitle}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4">
-              {t.sectionTitle}
+              {t.expertise.title}
             </h2>
             <div className="w-16 h-px bg-white/40 mx-auto mb-4" />
             <p className="text-white/70 max-w-lg mx-auto">
-              {t.sectionSubtitle}
+              {t.expertise.ctaText}
             </p>
           </div>
         </div>
@@ -167,12 +127,14 @@ export default function Services() {
 // Composant ServiceCard avec description intégrée (expand/collapse)
 interface ServiceCardProps {
   service: typeof services[0];
-  t: typeof serviceTranslations.fr;
+  t: ReturnType<typeof useLanguage>['t'];
   isActive: boolean;
   onClick: () => void;
 }
 
 function ServiceCard({ service, t, isActive, onClick }: ServiceCardProps) {
+  const serviceData = t.services[service.serviceKey as keyof typeof t.services];
+  
   return (
     <div className="border border-slate-200 bg-white transition-all duration-200 hover:border-slate-300">
       {/* Header cliquable */}
@@ -188,7 +150,7 @@ function ServiceCard({ service, t, isActive, onClick }: ServiceCardProps) {
         `}>
           <Image
             src={service.icon}
-            alt={t[service.titleKey as keyof typeof t] as string}
+            alt={serviceData.title}
             fill
             className="object-contain"
           />
@@ -199,7 +161,7 @@ function ServiceCard({ service, t, isActive, onClick }: ServiceCardProps) {
           flex-1 font-medium text-sm truncate transition-colors duration-200
           ${isActive ? 'text-emerald-700' : 'text-slate-800'}
         `}>
-          {t[service.titleKey as keyof typeof t]}
+          {serviceData.title}
         </h3>
 
         {/* Indicateur expand/collapse */}
@@ -220,13 +182,13 @@ function ServiceCard({ service, t, isActive, onClick }: ServiceCardProps) {
       `}>
         <div className="px-3 pb-3 pt-1 border-t border-slate-100">
           <p className="text-sm text-slate-600 leading-relaxed">
-            {t[service.descKey as keyof typeof t]}
+            {serviceData.description}
           </p>
           <a 
-            href={`#${service.id}`}
+            href={`/expertise#${service.id}`}
             className="inline-flex items-center gap-1 mt-2 text-emerald-700 hover:text-emerald-800 text-xs font-medium transition-colors"
           >
-            {t.learnMore}
+            {serviceData.readMore}
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

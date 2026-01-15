@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import { translations, Language } from '../i18n/translations';
 
 interface LanguageContextType {
@@ -12,14 +12,38 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('fr');
+const LANGUAGE_KEY = 'aguifa-language';
 
-  const toggleLanguage = useCallback(() => {
-    setLanguage(prev => prev === 'fr' ? 'en' : 'fr');
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguageState] = useState<Language>('fr');
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Charger la langue depuis localStorage au montage
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem(LANGUAGE_KEY) as Language | null;
+    if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
+      setLanguageState(savedLanguage);
+    }
+    setIsLoaded(true);
   }, []);
 
+  // Sauvegarder la langue dans localStorage à chaque changement
+  const setLanguage = useCallback((lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem(LANGUAGE_KEY, lang);
+  }, []);
+
+  const toggleLanguage = useCallback(() => {
+    const newLang = language === 'fr' ? 'en' : 'fr';
+    setLanguage(newLang);
+  }, [language, setLanguage]);
+
   const t = translations[language];
+
+  // Éviter le flash de contenu avec la mauvaise langue
+  if (!isLoaded) {
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, toggleLanguage }}>

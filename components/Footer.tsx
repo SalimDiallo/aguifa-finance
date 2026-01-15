@@ -7,18 +7,21 @@ export default function Footer() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { href: '#home', label: t.nav.home },
-    { href: '#about', label: t.nav.about },
-    { href: '#expertise', label: t.nav.expertise },
-    { href: '#contact', label: t.nav.contact },
+    { href: '/', label: t.nav.home },
+    { href: '/about', label: t.nav.about },
+    { href: '/expertise', label: t.nav.expertise },
+    { href: '/team', label: t.nav.team },
+    { href: '/projects', label: t.nav.projects },
+    { href: '/insights', label: t.nav.insights },
+    { href: '/contact', label: t.nav.contact },
   ];
 
   const expertiseLinks = [
-    { href: '#devFinance', label: t.services.devFinance.title },
-    { href: '#investment', label: t.services.investment.title },
-    { href: '#digital', label: t.services.digital.title },
-    { href: '#data', label: t.services.data.title },
-    { href: '#green', label: t.services.green.title },
+    { href: '/expertise#development', label: t.services.devFinance.title },
+    { href: '/expertise#investment', label: t.services.investment.title },
+    { href: '/expertise#digital', label: t.services.digital.title },
+    { href: '/expertise#data', label: t.services.data.title },
+    { href: '/expertise#green', label: t.services.green.title },
   ];
 
   return (

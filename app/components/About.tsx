@@ -33,16 +33,19 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 lg:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          {/* Image Carousel Card */}
-          <div>
-            <div className="overflow-hidden shadow-2xl">
-              {/* Images en carousel - utilise grid pour empiler sans absolute */}
+          {/* Image Carousel */}
+          <div className="relative">
+            {/* Cadre décoratif */}
+            <div className="absolute -top-4 -left-4 w-full h-full border border-slate-200 hidden lg:block" />
+            
+            <div className="relative overflow-hidden bg-slate-100">
+              {/* Images en carousel */}
               <div className="aspect-[4/3] grid">
                 {carouselImages.map((image, index) => (
                   <div
@@ -65,15 +68,15 @@ export default function About() {
                 ))}
               </div>
               
-              {/* Indicateurs de navigation - en dessous du carrousel */}
-              <div className="flex justify-center gap-2 py-4 bg-emerald-900/80">
+              {/* Indicateurs de navigation */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 {carouselImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImage(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-1 transition-all duration-300 ${
                       index === currentImage 
-                        ? 'bg-white w-6' 
+                        ? 'bg-white w-8' 
                         : 'bg-white/50 hover:bg-white/70 w-2'
                     }`}
                     aria-label={`Image ${index + 1}`}
@@ -86,21 +89,24 @@ export default function About() {
           {/* Text Side */}
           <div className="space-y-6">
             {/* Badge */}
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold tracking-wide uppercase">
+            <span className="inline-block text-xs font-medium tracking-widest text-slate-500 uppercase">
               {t.about.subtitle}
             </span>
             
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-slate-900">
               {t.about.title}
             </h2>
+
+            {/* Ligne décorative */}
+            <div className="w-12 h-0.5 bg-slate-900" />
             
             {/* Descriptions */}
             <div className="space-y-4">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                <span className="font-bold text-emerald-800">AGUIFA Dev Finance (ADF)</span> {t.about.description1}
+              <p className="text-slate-700 leading-relaxed">
+                <span className="font-semibold text-slate-900">AGUIFA Dev Finance (ADF)</span> {t.about.description1}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm">
                 {t.about.description2}
               </p>
             </div>
@@ -108,11 +114,11 @@ export default function About() {
             {/* CTA Link */}
             <a
               href="#expertise"
-              className="inline-flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-600 transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-slate-900 font-medium hover:text-slate-600 transition-colors group"
             >
               {t.about.knowMore}
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>

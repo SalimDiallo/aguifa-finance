@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 
@@ -76,22 +76,6 @@ export default function Services() {
   const { language } = useLanguage();
   const t = serviceTranslations[language as keyof typeof serviceTranslations] || serviceTranslations.fr;
   const [activeService, setActiveService] = useState<string | null>(null);
-  const [scrollY, setScrollY] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Effet parallaxe subtil
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const scrollProgress = -rect.top / window.innerHeight;
-        setScrollY(scrollProgress * 30);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Services de gauche (indices 0, 1, 2)
   const leftServices = services.slice(0, 3);
@@ -99,83 +83,84 @@ export default function Services() {
   const rightServices = services.slice(3);
 
   return (
-    <section 
-      ref={sectionRef}
-      id="services" 
-      className="relative py-16 lg:py-20 overflow-hidden bg-slate-50"
-    >
-      {/* Background subtil avec effet parallaxe */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{ transform: `translateY(${scrollY}px)` }}
+    <>
+      {/* Section avec image fixe (parallaxe) - Header Expertise */}
+      <section 
+        id="expertise"
+        className="relative h-[50vh] lg:h-[60vh] bg-fixed bg-cover bg-center"
+        style={{
+          backgroundImage: `url('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
+        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-slate-100" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-slate-200" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Overlay sombre */}
+        <div className="absolute inset-0 bg-slate-900/70" />
         
-        {/* Header de section - compact */}
-        <div className="text-center mb-10 lg:mb-12">
-          <span className="inline-block text-xs font-medium tracking-widest text-slate-500 uppercase mb-3">
-            Expertise
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-slate-900 mb-3">
-            {t.sectionTitle}
-          </h2>
-          <div className="w-12 h-0.5 bg-emerald-700 mx-auto mb-4" />
-          <p className="text-base text-slate-600 max-w-xl mx-auto font-light">
-            {t.sectionSubtitle}
-          </p>
-        </div>
-
-        {/* Layout : Image au centre, services de chaque côté */}
-        <div className="grid lg:grid-cols-9 gap-4 lg:gap-6 items-start">
-          
-          {/* Colonne gauche : 3 services */}
-          <div className="lg:col-span-3 space-y-2">
-            {leftServices.map((service) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                t={t}
-                isActive={activeService === service.id}
-                onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-              />
-            ))}
+        {/* Contenu centré */}
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center px-4">
+            <span className="inline-block text-xs font-medium tracking-widest text-white/60 uppercase mb-4">
+              Expertise
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4">
+              {t.sectionTitle}
+            </h2>
+            <div className="w-16 h-px bg-white/40 mx-auto mb-4" />
+            <p className="text-white/70 max-w-lg mx-auto">
+              {t.sectionSubtitle}
+            </p>
           </div>
+        </div>
+      </section>
 
-          {/* Colonne centrale : Image Afrique - mise en valeur */}
-          <div className="lg:col-span-3 flex justify-center order-first lg:order-none mb-6 lg:mb-0 py-4">
-            <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-full lg:h-[420px]">
-              <Image
-                src="/images/sections/Home/hero-africa.png"
-                alt="Africa Map"
-                fill
-                className="object-contain drop-shadow-lg"
-                priority
-              />
+      {/* Section Services - contenu qui défile */}
+      <section id="services" className="py-16 lg:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Layout : Image au centre, services de chaque côté */}
+          <div className="grid lg:grid-cols-9 gap-4 lg:gap-6 items-start">
+            
+            {/* Colonne gauche : 3 services */}
+            <div className="lg:col-span-3 space-y-2">
+              {leftServices.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                  t={t}
+                  isActive={activeService === service.id}
+                  onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+                />
+              ))}
+            </div>
+
+            {/* Colonne centrale : Image Afrique */}
+            <div className="lg:col-span-3 flex justify-center order-first lg:order-none mb-6 lg:mb-0 py-4">
+              <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-full lg:h-[420px]">
+                <Image
+                  src="/images/sections/Home/hero-africa.png"
+                  alt="Africa Map"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Colonne droite : 2 services */}
+            <div className="lg:col-span-3 space-y-2">
+              {rightServices.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                  t={t}
+                  isActive={activeService === service.id}
+                  onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+                />
+              ))}
             </div>
           </div>
-
-          {/* Colonne droite : 2 services */}
-          <div className="lg:col-span-3 space-y-2">
-            {rightServices.map((service) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                t={t}
-                isActive={activeService === service.id}
-                onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-              />
-            ))}
-          </div>
         </div>
-      </div>
-
-      {/* Ligne décorative en bas */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-slate-200" />
-    </section>
+      </section>
+    </>
   );
 }
 

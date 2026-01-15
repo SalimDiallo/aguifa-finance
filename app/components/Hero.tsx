@@ -83,7 +83,7 @@ export default function Hero() {
 
       {/* Top Bar - Logo + Social Links + Language */}
       <div className="absolute top-0 left-0 right-0 z-30 bg-white/50">
-        <div className="px-8 lg:px-16 xl:px-24 py-6 flex justify-center">
+        <div className="px-8 lg:px-16 xl:px-24 flex justify-center">
           <div className="flex items-center justify-between max-w-7xl mx-auto flex-1">
             {/* Logo */}
            <Logo/>

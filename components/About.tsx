@@ -113,7 +113,7 @@ export default function About() {
 
             {/* CTA Link */}
             <a
-              href="#expertise"
+              href="/about"
               className="inline-flex items-center gap-2 text-sm text-slate-900 font-medium hover:text-slate-600 transition-colors group"
             >
               {t.about.knowMore}

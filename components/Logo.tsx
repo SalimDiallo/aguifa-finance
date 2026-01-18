@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Logo() {
     return (
-        <a href="#home" className="flex items-center gap-4 group">
+        <a href="/" className="flex items-center gap-4 group">
             <div className="w-40 h-20 rounded-lg flex items-center justify-center">
                 <Image
                     src="/images/logo.png"

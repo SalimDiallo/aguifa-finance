@@ -1,28 +1,10 @@
 "use client";
 
 import { useLanguage } from '../context/LanguageContext';
-import { useState } from 'react';
+import ContactForm from './ContactForm';
 
 export default function Contact() {
-  const { t, language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+  const { t } = useLanguage();
 
   const contactInfo = [
     {
@@ -66,76 +48,7 @@ export default function Contact() {
           
           {/* Contact Form */}
           <div className="bg-white border border-slate-200 p-6 sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                    {t.contact.name}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                    {t.contact.email}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                  {t.contact.subject}
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                  {t.contact.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors resize-none text-sm"
-                  placeholder={t.contact.messagePlaceholder}
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full py-3 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
-              >
-                {t.contact.send}
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Contact Info */}
@@ -165,15 +78,27 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="relative h-48 bg-slate-100 border border-slate-200 flex items-center justify-center">
-              <div className="text-center">
-                <svg className="w-6 h-6 text-slate-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <p className="text-sm text-slate-600">{t.contact.locations.moroccoShort}</p>
-                <p className="text-xs text-slate-400">{t.contact.locations.guineaShort}</p>
+            {/* Google Map - Conakry Lambagui */}
+            <div className="relative h-64 bg-slate-100 border border-slate-200 overflow-hidden group">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.8012365847814!2d-13.6631!3d9.5370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd735d5e842c7%3A0x7c8f7e8a2e8c8e8a!2sLambagui%2C%20Conakry%2C%20Guinea!5e0!3m2!1sen!2s!4v1705500000000!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
+              {/* Location overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4">
+                <div className="flex items-center gap-2 text-white">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span className="text-sm font-medium">{t.contact.locations.guineaShort}</span>
+                </div>
               </div>
             </div>
 

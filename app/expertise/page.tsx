@@ -83,7 +83,7 @@ function ExpertiseContent() {
             {/* Timeline Container */}
             <div className="relative">
               {/* Ligne verticale */}
-              <div className="absolute left-[50px] md:left-1/2 top-0 bottom-0 w-0.5 bg-emerald-700 transform md:-translate-x-1/2" />
+              <div className="absolute left-[50px] md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-300 transform md:-translate-x-1/2" />
               
               {/* Services */}
               <div className="space-y-12 lg:space-y-16">
@@ -99,14 +99,14 @@ function ExpertiseContent() {
                         
                         {/* Titre (à gauche ou droite selon position) */}
                         <div className={`${isLeft ? 'text-right pr-12' : 'text-left pl-12 order-2'}`}>
-                          <h2 className="text-xl lg:text-2xl font-semibold text-emerald-800">
+                          <h2 className="text-xl lg:text-2xl font-semibold text-slate-900">
                             {serviceData.title}
                           </h2>
                         </div>
                         
                         {/* Icône au centre (sur la ligne) */}
                         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
-                          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-emerald-50 border-2 border-emerald-700 flex items-center justify-center">
+                          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center">
                             <div className="relative w-10 h-10 lg:w-12 lg:h-12">
                               <Image
                                 src={area.icon}
@@ -132,7 +132,7 @@ function ExpertiseContent() {
                       <div className="md:hidden flex gap-6">
                         {/* Icône */}
                         <div className="flex-shrink-0 relative z-10">
-                          <div className="w-[100px] h-16 rounded-full bg-emerald-50 border-2 border-emerald-700 flex items-center justify-center">
+                          <div className="w-[100px] h-16 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center">
                             <div className="relative w-10 h-10">
                               <Image
                                 src={area.icon}
@@ -146,7 +146,7 @@ function ExpertiseContent() {
                         
                         {/* Contenu */}
                         <div className="flex-1 pt-2">
-                          <h2 className="text-lg font-semibold text-emerald-800 mb-3">
+                          <h2 className="text-lg font-semibold text-slate-900 mb-3">
                             {serviceData.title}
                           </h2>
                           <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 rounded-tl-none">
@@ -175,78 +175,183 @@ function ExpertiseContent() {
         </section>
 
         {/* Services Annexes */}
-        <section className="py-16 lg:py-20 bg-white">
+        <section className="py-16 lg:py-20 bg-white border-t border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Header */}
             <div className="mb-12">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-emerald-800 mb-3">
+              <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 mb-4">
                 {t.expertise.annexServices.title}
               </h2>
-              <div className="w-16 h-1 bg-emerald-700" />
+              <p className="text-xl lg:text-2xl text-slate-600 font-light">
+                {t.expertise.annexServices.focusTitle}
+              </p>
             </div>
 
-            <div className="space-y-8">
-              {/* Focus */}
-              <div className="flex items-start gap-3">
-                <span className="text-emerald-700 mt-1">▶</span>
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {t.expertise.annexServices.focusTitle}
-                </h3>
-              </div>
+            {/* Description */}
+            <div className="mb-10">
+              <h3 className="text-lg font-medium text-slate-900 mb-3">
+                {t.expertise.annexServices.supportTitle}
+              </h3>
+              <p className="text-slate-600 leading-relaxed mb-3">
+                {t.expertise.annexServices.supportDescription}
+              </p>
+              <p className="text-slate-500 text-sm">
+                {language === 'fr' 
+                  ? 'Collaboration flexible en sous-traitance technique ou partenariat stratégique.'
+                  : 'Flexible collaboration in technical subcontracting or strategic partnership.'}
+              </p>
+            </div>
 
-              {/* Description */}
-              <div>
-                <h4 className="font-semibold text-slate-900 mb-3">{t.expertise.annexServices.supportTitle}</h4>
-                <p className="text-slate-600 leading-relaxed mb-4">
-                  {t.expertise.annexServices.supportDescription}
-                </p>
-                <p className="text-slate-500 text-sm">
-                  {language === 'fr' 
-                    ? 'Collaboration flexible en sous-traitance technique ou partenariat stratégique avec les cabinets de conseil nationaux et internationaux.'
-                    : 'Flexible collaboration in technical subcontracting or strategic partnership with national and international consulting firms.'}
-                </p>
-              </div>
-
-              {/* Composantes du service - Style encadré */}
-              <div className="mt-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-1 h-6 bg-emerald-700" />
-                  <h4 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
-                    {t.expertise.annexServices.components}
-                  </h4>
+            {/* Composantes - Liste simple */}
+            <div className="mb-10">
+              <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">
+                {t.expertise.annexServices.components}
+              </h4>
+              <div className="space-y-4">
+                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-900">
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900">
+                      {language === 'fr' ? 'Revue technique des Projets de Soumission' : 'Technical Review of Submission Projects'}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-1">
+                      {language === 'fr' 
+                        ? 'Cohérence, conformité, calendrier des livrables, tableau de contributions, diagramme GANT'
+                        : 'Coherence, compliance, deliverables schedule, contributions table, GANT diagram'}
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="space-y-0 border-l-2 border-emerald-700 ml-2">
-                  {/* Item 1 - Vert */}
-                  <div className="p-4 bg-emerald-700 text-white border-b border-emerald-600">
-                    <p className="font-medium">** {language === 'fr' ? 'Revue technique des Projets de Soumission' : 'Technical review of Submission Projects'}</p>
-                    <p className="text-sm text-emerald-100 mt-1">
-                      [{language === 'fr' ? 'Cohérence & conformité, Calendrier des Livrables, Tableau de Contributions Experts, Diagramme GANT' : 'Coherence & compliance, Deliverables Schedule, Expert Contributions Table, GANT Diagram'}]
+                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-300">
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900">
+                      {language === 'fr' ? 'Structuration méthodologique' : 'Methodological structuring'}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-1">
+                      {language === 'fr' ? 'Propre à chaque projet selon l\'attendu institutionnel' : 'Project-specific according to institutional expectations'}
                     </p>
                   </div>
-                  
-                  {/* Item 2 - Gris */}
-                  <div className="p-4 bg-slate-100 border-b border-slate-200">
-                    <p className="font-medium text-slate-800">{language === 'fr' ? 'Structuration méthodologique propre à chaque Projet' : 'Project-specific methodological structuring'}</p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      [{language === 'fr' ? 'Attendu institutionnelle' : 'Institutional expectations'}]
+                </div>
+                
+                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-300">
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900">
+                      {language === 'fr' ? 'Optimisation des CVs & références' : 'CV & reference optimization'}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-1">
+                      {language === 'fr' ? 'Base de données de consultants experts' : 'Expert consultants database'}
                     </p>
                   </div>
-                  
-                  {/* Item 3 - Blanc */}
-                  <div className="p-4 bg-white border border-slate-200 border-l-0">
-                    <p className="font-medium text-slate-800">{language === 'fr' ? 'Optimisation des CVs & références' : 'CV & reference optimization'}</p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      [** {language === 'fr' ? 'Base de données de Consultants Experts' : 'Expert Consultants Database'}]
+                </div>
+                
+                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-900">
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900">
+                      {language === 'fr' ? 'Montage financier' : 'Financial Setup'}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-1">
+                      {language === 'fr' 
+                        ? 'Taux experts/mois, simulations budgétaires, barèmes bailleurs, alignement contributions'
+                        : 'Expert rates/month, budget simulations, donor scales, contribution alignment'}
                     </p>
                   </div>
-                  
-                  {/* Item 4 - Noir */}
-                  <div className="p-4 bg-slate-900 text-white">
-                    <p className="font-medium">** {language === 'fr' ? 'Montage financier' : 'Financial setup'}</p>
-                    <p className="text-sm text-slate-300 mt-1">
-                      [{language === 'fr' ? 'Taux hommes (Experts)/mois, simulations, barèmes bailleurs, alignement au contributions' : 'Man-day rates (Experts)/month, simulations, donor scales, alignment with contributions'}]
-                    </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Standards supportés - Mise en valeur */}
+            <div className="mt-12 pt-10 border-t border-slate-200">
+              <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-6">
+                {t.expertise.annexServices.standards}
+              </h4>
+              
+              {/* Logos des bailleurs - Ligne 1 */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+                {/* BAD */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="/images/bad.png" 
+                      alt="Banque Africaine de Développement"
+                      className="h-8 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
                   </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">BAD</span>
+                </div>
+                
+                {/* Banque Mondiale */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/8/87/The_World_Bank_logo.svg" 
+                      alt="Banque Mondiale"
+                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">Banque Mondiale</span>
+                </div>
+                
+                {/* Union Européenne */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" 
+                      alt="Union Européenne"
+                      className="h-6 object-contain"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">Union Européenne</span>
+                </div>
+                
+                {/* AFD */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="/images/afd.png" 
+                      alt="AFD"
+                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">AFD</span>
+                </div>
+              </div>
+
+              {/* Logos des bailleurs - Ligne 2 */}
+              <div className="grid grid-cols-3 gap-4">
+                {/* KfW */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="/images/kfw.png" 
+                      alt="KfW"
+                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">KfW</span>
+                </div>
+                
+                {/* GIZ */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="/images/giz.png" 
+                      alt="GIZ"
+                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">GIZ</span>
+                </div>
+                
+                {/* USAID */}
+                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <div className="h-10 flex items-center justify-center mb-2">
+                    <img 
+                      src="/images/usaid.png" 
+                      alt="USAID"
+                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <span className="text-xs text-slate-600 text-center font-medium">USAID</span>
                 </div>
               </div>
             </div>
@@ -258,7 +363,7 @@ function ExpertiseContent() {
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <a 
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white text-sm font-medium hover:bg-emerald-800 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
             >
               {t.expertise.ctaButton}
             </a>

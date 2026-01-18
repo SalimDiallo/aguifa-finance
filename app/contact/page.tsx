@@ -3,29 +3,10 @@
 import { LanguageProvider, useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { useState } from 'react';
+import ContactForm from '../../components/ContactForm';
 
 function ContactContent() {
   const { t, language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -63,98 +44,11 @@ function ContactContent() {
                 </h2>
                 <div className="w-12 h-0.5 bg-slate-900 mb-8" />
                 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="name" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                        {t.contact.name} *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                        {t.contact.email} *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="company" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                      {t.contact.company}
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                      {t.contact.subject} *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors text-sm bg-white"
-                    >
-                      <option value="">{t.contact.selectSubject}</option>
-                      <option value="development">Development Finance & Public Policies</option>
-                      <option value="investment">Investment & Private Capital</option>
-                      <option value="digital">Digital & MSME Finance</option>
-                      <option value="data">Data & Research</option>
-                      <option value="green">Green & Sustainable Finance</option>
-                      <option value="tenders">{t.contact.tenderSupport}</option>
-                      <option value="other">{t.contact.otherRequest}</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
-                      {t.contact.message} *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-slate-200 focus:border-slate-400 focus:outline-none transition-colors resize-none text-sm"
-                      placeholder={t.contact.messagePlaceholder}
-                    />
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
-                  >
-                    {t.contact.send}
-                  </button>
-                </form>
+                <ContactForm 
+                  showCompany={true}
+                  useSubjectSelect={true}
+                  messageRows={6}
+                />
               </div>
 
               {/* Contact Info */}
@@ -224,6 +118,28 @@ function ContactContent() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Google Maps Section */}
+        <section className="bg-slate-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h3 className="text-lg font-semibold text-slate-900 mb-4">
+              {language === 'fr' ? 'Notre localisation - Bureau Guinée' : 'Our Location - Guinea Office'}
+            </h3>
+          </div>
+          <div className="w-full h-[400px] lg:h-[500px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15823.95076977493!2d-13.6824!3d9.535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd06f7c9e6f0b%3A0x7c4d5f8e3a9b2c1d!2sLambagui%2C%20Conakry%2C%20Guinea!5e0!3m2!1sen!2s!4v1705000000000!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="AGUIFA Guinea Office - Conakry Lambagui"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            />
           </div>
         </section>
       </main>

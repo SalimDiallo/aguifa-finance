@@ -203,6 +203,9 @@ export const translations = {
         guineaShort: "Conakry, Lambagny",
       },
       inProgress: "(En cours de développement)",
+      successMessage: "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+      errorMessage: "Une erreur est survenue. Veuillez réessayer.",
+      sending: "Envoi en cours...",
     },
     // Footer
     footer: {
@@ -424,6 +427,9 @@ export const translations = {
         guineaShort: "Conakry, Lambagny",
       },
       inProgress: "(In development)",
+      successMessage: "Your message has been sent successfully. We will get back to you shortly.",
+      errorMessage: "An error occurred. Please try again.",
+      sending: "Sending...",
     },
     // Footer
     footer: {

@@ -10,17 +10,17 @@ import LangSwitch from './LangSwitch';
 const heroSlides = [
   {
     id: 1,
-    image: '/a.png',
+    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1920',
     slideKey: 'slide1' as const,
   },
   {
     id: 2,
-    image: 'https://images.pexels.com/photos/4947381/pexels-photo-4947381.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: '/f.jpg',
     slideKey: 'slide2' as const,
   },
   {
     id: 3,
-    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1920',
+     image: '/a.png',
     slideKey: 'slide3' as const,
   },
   {

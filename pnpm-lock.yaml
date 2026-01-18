@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      forminit:
+        specifier: ^0.2.3
+        version: 0.2.3(next@16.1.1(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       next:
         specifier: 16.1.1
         version: 16.1.1(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -1087,6 +1090,15 @@ packages:
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
+
+  forminit@0.2.3:
+    resolution: {integrity: sha512-Po2mjVt5vjVeYHE7za7hdEZchMLLI4qU3EVBy2/OqXEF8RDv6GkPlG0uDj4g5d4qMv4Wb4EfPAuGjSHRL+rK7g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      next: '>=14.0.0'
+    peerDependenciesMeta:
+      next:
+        optional: true
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
@@ -3083,6 +3095,10 @@ snapshots:
   for-each@0.3.5:
     dependencies:
       is-callable: 1.2.7
+
+  forminit@0.2.3(next@16.1.1(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)):
+    optionalDependencies:
+      next: 16.1.1(@babel/core@7.28.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
 
   function-bind@1.1.2: {}
 

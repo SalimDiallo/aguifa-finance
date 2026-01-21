@@ -72,7 +72,18 @@ function ExpertiseContent() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white">
               {t.expertise.title}
             </h1>
-            <div className="w-16 h-px bg-white/40 mx-auto mt-4" />
+            <div className="w-16 h-px bg-white/40 mx-auto mt-4 mb-6" />
+            
+            {/* Bouton Services Annexes */}
+            <a 
+              href="#services-annexes"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-sm font-medium transition-all"
+            >
+              {language === 'fr' ? 'Voir les Services Annexes' : 'View Additional Services'}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
           </div>
         </section>
 
@@ -174,185 +185,190 @@ function ExpertiseContent() {
           <div className="absolute inset-0 bg-slate-900/60" />
         </section>
 
-        {/* Services Annexes */}
-        <section className="py-16 lg:py-20 bg-white border-t border-slate-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Services Annexes - ADF Academy */}
+        <section id="services-annexes" className="py-16 lg:py-24 bg-white border-t border-slate-100 scroll-mt-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
-            <div className="mb-12">
-              <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 mb-4">
-                {t.expertise.annexServices.title}
+            <div className="text-center mb-16">
+              <span className="inline-block text-xs font-medium tracking-widest text-slate-400 uppercase mb-3">
+                ADF Academy
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-light text-slate-900 mb-4">
+                {language === 'fr' ? 'Services Annexes' : 'Additional Services'}
               </h2>
-              <p className="text-xl lg:text-2xl text-slate-600 font-light">
-                {t.expertise.annexServices.focusTitle}
-              </p>
-            </div>
-
-            {/* Description */}
-            <div className="mb-10">
-              <h3 className="text-lg font-medium text-slate-900 mb-3">
-                {t.expertise.annexServices.supportTitle}
-              </h3>
-              <p className="text-slate-600 leading-relaxed mb-3">
-                {t.expertise.annexServices.supportDescription}
-              </p>
-              <p className="text-slate-500 text-sm">
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 {language === 'fr' 
-                  ? 'Collaboration flexible en sous-traitance technique ou partenariat stratégique.'
-                  : 'Flexible collaboration in technical subcontracting or strategic partnership.'}
+                  ? 'Insertion professionnelle & Développement des compétences en Finance'
+                  : 'Professional Integration & Finance Skills Development'}
               </p>
             </div>
 
-            {/* Composantes - Liste simple */}
-            <div className="mb-10">
-              <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">
-                {t.expertise.annexServices.components}
-              </h4>
-              <div className="space-y-4">
-                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-900">
-                  <div className="flex-1">
-                    <p className="font-medium text-slate-900">
-                      {language === 'fr' ? 'Revue technique des Projets de Soumission' : 'Technical Review of Submission Projects'}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-1">
-                      {language === 'fr' 
-                        ? 'Cohérence, conformité, calendrier des livrables, tableau de contributions, diagramme GANT'
-                        : 'Coherence, compliance, deliverables schedule, contributions table, GANT diagram'}
-                    </p>
+            {/* Deux programmes */}
+            <div className="grid lg:grid-cols-2 gap-8">
+              
+              {/* Programme 1: Éducation Financière */}
+              <div className="bg-slate-50 border border-slate-200 overflow-hidden">
+                {/* Header du programme */}
+                <div className="bg-[#2d5a3d] p-6 text-white">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">
+                        {language === 'fr' ? 'Éducation Financière & Marchés des Capitaux' : 'Financial Education & Capital Markets'}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-white/80 text-sm">
+                    {language === 'fr' 
+                      ? 'Renforcement des capacités et sensibilisation aux marchés des capitaux'
+                      : 'Capacity building and capital markets awareness'}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <div className="p-6 border-b border-slate-200">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                    {language === 'fr'
+                      ? 'Programmes structurés d\'éducation financière et de sensibilisation aux marchés des capitaux, destinés principalement aux jeunes salariés, jeunes professionnels et entrepreneurs émergents.'
+                      : 'Structured financial education and capital markets awareness programs, primarily aimed at young employees, young professionals and emerging entrepreneurs.'}
+                  </p>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {language === 'fr'
+                      ? 'Ce service vise à favoriser l\'émergence d\'une classe moyenne résiliente par une gestion optimisée de l\'épargne et une compréhension des marchés de capitaux.'
+                      : 'This service aims to foster the emergence of a resilient middle class through optimized savings management and understanding of capital markets.'}
+                  </p>
+                </div>
+
+                {/* Composantes */}
+                <div className="p-6">
+                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                    {language === 'fr' ? 'Composantes du service' : 'Service Components'}
+                  </h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr' ? 'Conseil en Stratégie d\'Épargne Productive' : 'Productive Savings Strategy Consulting'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#a8c5a0] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr' ? 'Accès aux Marchés des Capitaux' : 'Capital Markets Access'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#c8dcc4] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr' ? 'Ingénierie de la Retraite et Prévoyance' : 'Retirement and Pension Engineering'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr' ? 'Inclusion Financière Digitale' : 'Digital Financial Inclusion'}
+                    </div>
                   </div>
                 </div>
-                
-                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-300">
-                  <div className="flex-1">
-                    <p className="font-medium text-slate-900">
-                      {language === 'fr' ? 'Structuration méthodologique' : 'Methodological structuring'}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-1">
-                      {language === 'fr' ? 'Propre à chaque projet selon l\'attendu institutionnel' : 'Project-specific according to institutional expectations'}
-                    </p>
+
+                {/* Note */}
+                <div className="px-6 pb-6">
+                  <p className="text-xs text-slate-500 italic">
+                    {language === 'fr'
+                      ? 'En cohérence avec les standards de protection des investisseurs et les objectifs de mobilisation de l\'épargne domestique.'
+                      : 'Aligned with investor protection standards and domestic savings mobilization objectives.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Programme 2: Insertion Professionnelle */}
+              <div className="bg-slate-50 border border-slate-200 overflow-hidden">
+                {/* Header du programme */}
+                <div className="bg-[#2d5a3d] p-6 text-white">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">
+                        {language === 'fr' ? 'Insertion Professionnelle & Formation' : 'Professional Integration & Training'}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-white/80 text-sm">
+                    {language === 'fr' 
+                      ? 'Renforcement des capacités et préparation aux métiers de la finance et du développement'
+                      : 'Capacity building and preparation for finance and development careers'}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <div className="p-6 border-b border-slate-200">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                    {language === 'fr'
+                      ? 'Pôle de formation et d\'insertion professionnelle d\'AGUIFA Dev Finance (ADF), dédié au renforcement des compétences techniques des étudiants, jeunes diplômés et jeunes professionnels.'
+                      : 'AGUIFA Dev Finance (ADF) training and professional integration hub, dedicated to strengthening the technical skills of students, young graduates and young professionals.'}
+                  </p>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {language === 'fr'
+                      ? 'Passerelle entre l\'enseignement académique et les exigences du marché de l\'emploi institutionnel, visant à doter les futurs cadres des leviers techniques nécessaires pour opérer selon les standards DFIs.'
+                      : 'Bridge between academic education and institutional job market requirements, aiming to equip future executives with the technical levers needed to operate according to DFI standards.'}
+                  </p>
+                </div>
+
+                {/* Composantes */}
+                <div className="p-6">
+                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                    {language === 'fr' ? 'Composantes du service' : 'Service Components'}
+                  </h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr' ? 'Formation aux standards multilatéraux (DFIs)' : 'Training in multilateral standards (DFIs)'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#a8c5a0] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr' ? 'Bootcamps en ingénierie financière & modélisation' : 'Financial engineering & modeling bootcamps'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#c8dcc4] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr' ? 'Spécialisation en Data Analytics, MERL & outils décisionnels' : 'Specialization in Data Analytics, MERL & decision tools'}
+                    </div>
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr' ? 'Mentorat, immersion opérationnelle & orientation professionnelle' : 'Mentoring, operational immersion & career guidance'}
+                    </div>
                   </div>
                 </div>
-                
-                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-300">
-                  <div className="flex-1">
-                    <p className="font-medium text-slate-900">
-                      {language === 'fr' ? 'Optimisation des CVs & références' : 'CV & reference optimization'}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-1">
-                      {language === 'fr' ? 'Base de données de consultants experts' : 'Expert consultants database'}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 bg-slate-50 border-l-2 border-slate-900">
-                  <div className="flex-1">
-                    <p className="font-medium text-slate-900">
-                      {language === 'fr' ? 'Montage financier' : 'Financial Setup'}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-1">
-                      {language === 'fr' 
-                        ? 'Taux experts/mois, simulations budgétaires, barèmes bailleurs, alignement contributions'
-                        : 'Expert rates/month, budget simulations, donor scales, contribution alignment'}
-                    </p>
-                  </div>
+
+                {/* Note */}
+                <div className="px-6 pb-6">
+                  <p className="text-xs text-slate-500 italic">
+                    {language === 'fr'
+                      ? 'Professionnalisation des talents conformément aux standards des Institutions de Financement du Développement.'
+                      : 'Talent professionalization in accordance with Development Finance Institution standards.'}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Standards supportés - Mise en valeur */}
-            <div className="mt-12 pt-10 border-t border-slate-200">
-              <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-6">
-                {t.expertise.annexServices.standards}
-              </h4>
-              
-              {/* Logos des bailleurs - Ligne 1 */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
-                {/* BAD */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="/images/bad.png" 
-                      alt="Banque Africaine de Développement"
-                      className="h-8 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">BAD</span>
-                </div>
-                
-                {/* Banque Mondiale */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/8/87/The_World_Bank_logo.svg" 
-                      alt="Banque Mondiale"
-                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">Banque Mondiale</span>
-                </div>
-                
-                {/* Union Européenne */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" 
-                      alt="Union Européenne"
-                      className="h-6 object-contain"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">Union Européenne</span>
-                </div>
-                
-                {/* AFD */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="/images/afd.png" 
-                      alt="AFD"
-                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">AFD</span>
-                </div>
-              </div>
-
-              {/* Logos des bailleurs - Ligne 2 */}
-              <div className="grid grid-cols-3 gap-4">
-                {/* KfW */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="/images/kfw.png" 
-                      alt="KfW"
-                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">KfW</span>
-                </div>
-                
-                {/* GIZ */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="/images/giz.png" 
-                      alt="GIZ"
-                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">GIZ</span>
-                </div>
-                
-                {/* USAID */}
-                <div className="flex flex-col items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors">
-                  <div className="h-10 flex items-center justify-center mb-2">
-                    <img 
-                      src="/images/usaid.png" 
-                      alt="USAID"
-                      className="h-6 object-contain grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <span className="text-xs text-slate-600 text-center font-medium">USAID</span>
-                </div>
+            {/* CTA Section */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex flex-col sm:flex-row items-center gap-4">
+                <a 
+                  href="/contact"
+                  className="px-6 py-3 bg-[#2d5a3d] text-white text-sm font-medium hover:bg-[#234a31] transition-colors"
+                >
+                  {language === 'fr' ? 'En savoir plus sur ADF Academy' : 'Learn more about ADF Academy'}
+                </a>
+                <a 
+                  href="mailto:academy@aguifa.org"
+                  className="px-6 py-3 border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-50 transition-colors"
+                >
+                  academy@aguifa.org
+                </a>
               </div>
             </div>
           </div>

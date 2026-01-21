@@ -13,7 +13,7 @@ const projects = [
     category: 'Investment',
     descriptionFr: 'Structuration et analyse de portefeuilles de commodités pour investisseurs institutionnels.',
     descriptionEn: 'Commodities portfolio structuring and analysis for institutional investors.',
-    image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/CommodityBusket.jpg',
     year: '2024'
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     category: 'Development Finance',
     descriptionFr: 'Programme de développement des énergies renouvelables et d\'efficacité énergétique.',
     descriptionEn: 'Renewable energy development and energy efficiency program.',
-    image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/SWEED2.jpg',
     year: '2024'
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     category: 'Public Policies',
     descriptionFr: 'Appui technique à la réforme du secteur de l\'énergie et structuration de projets.',
     descriptionEn: 'Technical support for energy sector reform and project structuring.',
-    image: 'https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/AESTAP.jpg',
     year: '2024'
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     category: 'Events',
     descriptionFr: 'Contribution et participation au sommet africain sur l\'énergie.',
     descriptionEn: 'Contribution and participation in the African Energy Summit.',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/Africaenergysummit.jpg',
     year: '2024'
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     category: 'Research',
     descriptionFr: 'Étude et rapport sur l\'intégration régionale économique en Afrique.',
     descriptionEn: 'Study and report on regional economic integration in Africa.',
-    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/ElectricityRegulatoryIndex.jpg',
     year: '2024'
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     category: 'Institutional',
     descriptionFr: 'Participation aux réunions annuelles de la Banque Africaine de Développement.',
     descriptionEn: 'Participation in the African Development Bank annual meetings.',
-    image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/sections/Projects/AfDBAnnualMeeting.jpg',
     year: '2024'
   },
 ];

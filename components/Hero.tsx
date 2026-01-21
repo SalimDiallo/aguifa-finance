@@ -168,14 +168,14 @@ export default function Hero() {
             </div>
 
             {/* Right - Africa Image */}
-            <div className="hidden lg:flex justify-end">
-              <div className="relative w-full max-w-md">
+            <div className="hidden lg:flex justify-end items-center">
+              <div className="relative w-full max-w-2xl -mr-12">
                 <Image
                   src="/images/sections/Home/hero.png"
                   alt="Africa - AGUIFA Dev Finance"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-contain opacity-90"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-auto object-contain opacity-95 scale-125"
                   priority
                 />
               </div>

@@ -37,11 +37,6 @@ export default function Services() {
   const { t } = useLanguage();
   const [activeService, setActiveService] = useState<string | null>(null);
 
-  // Services de gauche (indices 0, 1, 2)
-  const leftServices = services.slice(0, 3);
-  // Services de droite (indices 3, 4)
-  const rightServices = services.slice(3);
-
   return (
     <>
       {/* Section avec image fixe (parallaxe) - Header Expertise */}
@@ -76,12 +71,14 @@ export default function Services() {
       <section id="services" className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Layout : Image au centre, services de chaque côté */}
-          <div className="grid lg:grid-cols-9 gap-4 lg:gap-6 items-start">
+          {/* Layout : Image à gauche, services à droite */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             
-            {/* Colonne gauche : 3 services */}
-            <div className="lg:col-span-3 space-y-2">
-              {leftServices.map((service) => (
+         
+
+            {/* Colonne : Tous les services */}
+            <div className="space-y-3">
+              {services.map((service) => (
                 <ServiceCard
                   key={service.id}
                   service={service}
@@ -90,11 +87,24 @@ export default function Services() {
                   onClick={() => setActiveService(activeService === service.id ? null : service.id)}
                 />
               ))}
+              
+              {/* CTA vers Expertise */}
+              <div className="pt-4">
+                <a 
+                  href="/expertise"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-colors"
+                >
+                  {t.expertise.ctaText}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            {/* Colonne centrale : Image Afrique */}
-            <div className="lg:col-span-3 flex justify-center order-first lg:order-none mb-6 lg:mb-0 py-4">
-              <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-full lg:h-[420px]">
+               {/* Colonne : Image Afrique */}
+            <div className="flex justify-center lg:sticky lg:top-24">
+              <div className="relative w-72 h-80 sm:w-80 sm:h-96 lg:w-full lg:h-[500px]">
                 <Image
                   src="/images/sections/Home/hero-africa.png"
                   alt="Africa Map"
@@ -103,19 +113,6 @@ export default function Services() {
                   priority
                 />
               </div>
-            </div>
-
-            {/* Colonne droite : 2 services */}
-            <div className="lg:col-span-3 space-y-2">
-              {rightServices.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  service={service}
-                  t={t}
-                  isActive={activeService === service.id}
-                  onClick={() => setActiveService(activeService === service.id ? null : service.id)}
-                />
-              ))}
             </div>
           </div>
         </div>

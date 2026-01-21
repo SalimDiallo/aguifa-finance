@@ -4,6 +4,7 @@ import { LanguageProvider } from '../../context/LanguageContext';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const insights = [
   {
@@ -63,6 +64,9 @@ const insights = [
 ];
 
 export default function InsightsPage() {
+  const router = useRouter();
+  router.back();
+  return null;
   return (
     <LanguageProvider>
       <div className="min-h-screen flex flex-col">

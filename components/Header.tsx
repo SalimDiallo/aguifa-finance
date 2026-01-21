@@ -30,7 +30,7 @@ export default function Header() {
     { href: '/expertise', label: t.nav.expertise },
     { href: '/team', label: t.nav.team },
     { href: '/projects', label: t.nav.projects },
-    { href: '/insights', label: t.nav.insights },
+    // { href: '/insights', label: t.nav.insights },
     { href: '/contact', label: t.nav.contact },
   ];
 

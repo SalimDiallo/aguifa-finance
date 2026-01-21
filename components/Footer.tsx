@@ -6,28 +6,11 @@ import Image from 'next/image';
 export default function Footer() {
   const { t, language } = useLanguage();
 
-  const quickLinks = [
-    { href: '/', label: t.nav.home },
-    { href: '/about', label: t.nav.about },
-    { href: '/expertise', label: t.nav.expertise },
-    { href: '/team', label: t.nav.team },
-    { href: '/projects', label: t.nav.projects },
-    { href: '/contact', label: t.nav.contact },
-  ];
-
-  const expertiseLinks = [
-    { href: '/expertise#development', label: t.services.devFinance.title },
-    { href: '/expertise#investment', label: t.services.investment.title },
-    { href: '/expertise#green', label: t.services.green.title },
-    { href: '/expertise#digital', label: t.services.digital.title },
-    { href: '/expertise#data', label: t.services.data.title },
-  ];
-
   return (
     <footer className="bg-slate-900 text-white">
       {/* Main Footer */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -45,9 +28,7 @@ export default function Footer() {
                 <div className="text-xs tracking-wider uppercase text-slate-400">Dev Finance</div>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              {t.footer.description}
-            </p>
+           
             {/* Contact Info */}
             <div className="space-y-1 text-xs text-slate-500">
               <p>info@aguifa.org</p>
@@ -56,46 +37,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-slate-300 uppercase tracking-wider">{t.footer.quickLinks}</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-slate-400 hover:text-white text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        
 
-          {/* Expertise Links */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4 text-slate-300 uppercase tracking-wider">{t.footer.expertise}</h3>
-            <ul className="space-y-2">
-              {expertiseLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-slate-400 hover:text-white text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        
 
           {/* Locations & Social */}
           <div>
             <h3 className="text-sm font-semibold mb-4 text-slate-300 uppercase tracking-wider">
               {t.footer.offices}
             </h3>
-            <div className="space-y-3 text-sm text-slate-400 mb-6">
+            <div className="space-y-3 text-sm text-slate-400 mb-6 grid grid-cols-2">
               <div>
                 <p className="text-slate-300 text-xs uppercase tracking-wide mb-1">{t.footer.morocco}</p>
                 <p>{t.contact.locations.moroccoShort}</p>

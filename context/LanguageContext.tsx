@@ -20,17 +20,21 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   // Charger la langue depuis localStorage au montage
   useEffect(() => {
-    const savedLanguage = localStorage.getItem(LANGUAGE_KEY) as Language | null;
-    if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
-      setLanguageState(savedLanguage);
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem(LANGUAGE_KEY) as Language | null;
+      if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
+        setLanguageState(savedLanguage);
+      }
+      setIsLoaded(true);
     }
-    setIsLoaded(true);
   }, []);
 
   // Sauvegarder la langue dans localStorage à chaque changement
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem(LANGUAGE_KEY, lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(LANGUAGE_KEY, lang);
+    }
   }, []);
 
   const toggleLanguage = useCallback(() => {
@@ -39,11 +43,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [language, setLanguage]);
 
   const t = translations[language];
-
-  // Éviter le flash de contenu avec la mauvaise langue
-  if (!isLoaded) {
-    return null;
-  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, toggleLanguage }}>

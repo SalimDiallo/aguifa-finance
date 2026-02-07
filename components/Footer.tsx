@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from '@/i18n/site';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 
@@ -55,7 +56,7 @@ export default function Footer() {
             <div className="flex gap-3">
                 <a
                   key={"linkedin"}
-                  href={t.contact.linkdIn}
+                  href={siteConfig.linkdIn}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 border border-slate-700 hover:border-slate-500 hover:bg-slate-800 flex items-center justify-center transition-all"

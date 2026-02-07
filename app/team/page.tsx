@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 'pema',
     name: 'Pema Guilavogui',
-    role: 'Associate Director - Politique Publique et Developpement Durable',
+    role: 'Directeur Associé Politique Publique et Developpement Durable',
     roleEn: 'Associate Director - Public Policy and Sustainable Development',
     shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
     shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
@@ -87,8 +87,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'juliette',
     name: 'Juliette Rioual',
-    role: 'Associate Director - Spécialiste Finance verte ',
-    roleEn: 'Associate Director - Green Finance Specialist',
+    role: 'Spécialiste Finance verte',
+    roleEn: 'Green Finance Specialist',
     shortBio: 'Analyste financière, formée à NEOMA Business School (Programme Grande École, MSc Finance – Investment & Wealth Management), avec une spécialisation en modélisation financière, analyse crédit, gestion d\'actifs immobiliers et contrôle financier.',
     shortBioEn: 'Financial analyst, trained at NEOMA Business School (Grande École Program, MSc Finance – Investment & Wealth Management), with specialization in financial modeling, credit analysis, real estate asset management and financial control.',
     fullBio: [
@@ -120,9 +120,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'baba',
-    name: 'Baba Kankani Gariba',
-    role: 'Associate Director – Data Analyst, Expert Suivi Evaluation et Analyse de données',
-    roleEn: 'Associate Director – Data Analysis and Evaluation Expert',
+    name: 'Kankani Gariba',
+    role: 'Expert Suivi Evaluation et Analyse de données',
+    roleEn: 'Evaluation and Data Analysis Expert',
     shortBio: 'Spécialiste du Monitoring, Evaluation, Research and Learning (MERL), Baba Kankani Gariba cumule plus de dix années d\'expérience au sein d\'organisations internationales, programmes multilatéraux et institutions publiques.',
     shortBioEn: 'MERL (Monitoring, Evaluation, Research and Learning) specialist, Baba Kankani Gariba has over ten years of experience in international organizations, multilateral programs and public institutions.',
     fullBio: [

@@ -93,7 +93,7 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               {/* LinkedIn (taille réduite) */}
               <a 
-                href="https://linkedin.com" 
+                href={t.contact.linkdIn}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-6 h-6 flex items-center justify-center text-white/70 hover:text-white transition-colors"

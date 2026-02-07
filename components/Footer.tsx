@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="flex gap-3">
                 <a
                   key={"linkedin"}
-                  href={`https://.com/aguifa`}
+                  href={t.contact.linkdIn}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 border border-slate-700 hover:border-slate-500 hover:bg-slate-800 flex items-center justify-center transition-all"

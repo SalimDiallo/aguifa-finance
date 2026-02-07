@@ -25,8 +25,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'pema',
     name: 'Pema Guilavogui',
-    role: 'Directeur Associé - Politique Publique et Developpement Durable',
-    roleEn: 'Associate Director - Public Policy and Sustainable Development',
+    role: 'Fondateur Associé - Politique Publique et Developpement Durable',
+    roleEn: 'Founding Partner - Public Policy and Sustainable Development',
     shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
     shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
     fullBio: [
@@ -55,8 +55,8 @@ const teamMembers: TeamMember[] = [
    {
     id: 'joseph',
     name: 'Joseph Gougna',
-    role: 'Associate Founder - Stategie et Developement',
-    roleEn: 'Associate Founder - Strategy and Development',
+    role: 'Fondateur Associé - Stategie et Developement',
+    roleEn: 'Founding Partner - Strategy and Development',
     shortBio: 'Spécialiste en ingénierie financière et en politiques publiques, Joseph Gougna dispose d\'une expérience diversifiée à l\'interface entre banques commerciales, institutions financières internationales, cabinets de conseil et administrations publiques.',
     shortBioEn: 'Specialist in financial engineering and public policies, Joseph Gougna has diverse experience at the interface between commercial banks, international financial institutions, consulting firms and public administrations.',
     fullBio: [

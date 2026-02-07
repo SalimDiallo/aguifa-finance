@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
       'Bachelor\'s and Master\'s in Economics and Public Policy (Mohammed V University, Rabat)',
     ],
     image: '/images/sections/Team/h.jpg',
-    linkedin: '#',
+    // linkedin: '#',
   },
    {
     id: 'joseph',
@@ -194,7 +194,7 @@ function TeamMemberCard({ member, isExpanded, onToggle }: {
             </div>
             
             {/* LinkedIn sous la photo */}
-            {member.linkedin && (
+            {/* {member.linkedin && (
               <a 
                 href={member.linkedin}
                 target="_blank"
@@ -206,7 +206,7 @@ function TeamMemberCard({ member, isExpanded, onToggle }: {
                 </svg>
                 LinkedIn
               </a>
-            )}
+            )} */}
           </div>
 
           {/* Info de base */}

@@ -15,7 +15,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const LANGUAGE_KEY = 'aguifa-language';
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('fr');
+  const [language, setLanguageState] = useState<Language>('en');
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Charger la langue depuis localStorage au montage

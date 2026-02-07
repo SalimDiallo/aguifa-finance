@@ -12,7 +12,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "STRUCTURER LA",
+      title: "STRUCTURATION D’UNE",
       titleHighlight: "FINANCE DURABLE",
       titleEnd: "POUR L'AFRIQUE",
       subtitle: "Mobiliser les capitaux, Bâtir l'impact, Accélérer le développement.",

@@ -31,13 +31,11 @@ export default function Footer() {
            
             {/* Contact Info */}
             <div className="space-y-1 text-xs text-slate-500">
-              <p>info@aguifa.org</p>
+              <p>info@aguifa-finance.com</p>
               <p>+212 615 776 357</p>
-              <p>+224 626 904 564</p>
+              <p>+224 624 682 317</p>
             </div>
           </div>
-
-        
 
         
 
@@ -49,11 +47,11 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-slate-400 mb-6 grid grid-cols-2">
               <div>
                 <p className="text-slate-300 text-xs uppercase tracking-wide mb-1">{t.footer.morocco}</p>
-                <p>{t.contact.locations.moroccoShort}</p>
+                <p>{t.contact.locations.morocco}</p>
               </div>
               <div>
                 <p className="text-slate-300 text-xs uppercase tracking-wide mb-1">{t.footer.guinea}</p>
-                <p>{t.contact.locations.guineaShort}</p>
+                <p>{t.contact.locations.guinea}</p>
               </div>
             </div>
             

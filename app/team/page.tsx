@@ -25,8 +25,8 @@ const teamMembers: TeamMember[] = [
    {
     id: 'joseph',
     name: 'Joseph Gougna',
-    role: 'Associate Director',
-    roleEn: 'Associate Director',
+    role: 'Associate Director - Stategie et Developement',
+    roleEn: 'Associate Director - Strategy and Development',
     shortBio: 'Spécialiste en ingénierie financière et en politiques publiques, Joseph Gougna dispose d\'une expérience diversifiée à l\'interface entre banques commerciales, institutions financières internationales, cabinets de conseil et administrations publiques.',
     shortBioEn: 'Specialist in financial engineering and public policies, Joseph Gougna has diverse experience at the interface between commercial banks, international financial institutions, consulting firms and public administrations.',
     fullBio: [
@@ -57,8 +57,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'pema',
     name: 'Pema Guilavogui',
-    role: 'Associate Director',
-    roleEn: 'Associate Director',
+    role: 'Associate Director - Politique Publique et Developpement Durable',
+    roleEn: 'Associate Director - Public Policy and Sustainable Development',
     shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
     shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
     fullBio: [
@@ -87,8 +87,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'juliette',
     name: 'Juliette Rioual',
-    role: 'Associate Director',
-    roleEn: 'Associate Director',
+    role: 'Associate Director - Spécialiste Finance verte ',
+    roleEn: 'Associate Director - Green Finance Specialist',
     shortBio: 'Analyste financière, formée à NEOMA Business School (Programme Grande École, MSc Finance – Investment & Wealth Management), avec une spécialisation en modélisation financière, analyse crédit, gestion d\'actifs immobiliers et contrôle financier.',
     shortBioEn: 'Financial analyst, trained at NEOMA Business School (Grande École Program, MSc Finance – Investment & Wealth Management), with specialization in financial modeling, credit analysis, real estate asset management and financial control.',
     fullBio: [
@@ -121,8 +121,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'baba',
     name: 'Baba Kankani Gariba',
-    role: 'Associate Director – Data Analyst',
-    roleEn: 'Associate Director – Data Analyst',
+    role: 'Associate Director – Data Analyst, Expert Suivi Evaluation et Analyse de données',
+    roleEn: 'Associate Director – Data Analysis and Evaluation Expert',
     shortBio: 'Spécialiste du Monitoring, Evaluation, Research and Learning (MERL), Baba Kankani Gariba cumule plus de dix années d\'expérience au sein d\'organisations internationales, programmes multilatéraux et institutions publiques.',
     shortBioEn: 'MERL (Monitoring, Evaluation, Research and Learning) specialist, Baba Kankani Gariba has over ten years of experience in international organizations, multilateral programs and public institutions.',
     fullBio: [

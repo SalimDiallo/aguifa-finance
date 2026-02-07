@@ -115,7 +115,7 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-              <div className="pt-3 px-3 border-t border-slate-200/20">
+              <div className="pt-3 px-3 border-t border-slate-200/20 flex justify-end">
                 <LangSwitch variant={isFixed ? 'dark' : 'light'} />
               </div>
             </div>

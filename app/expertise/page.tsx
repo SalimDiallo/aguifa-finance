@@ -9,27 +9,27 @@ const expertiseAreas = [
   { 
     id: 'development', 
     titleKey: 'devFinance',
-    icon: '/images/icon-dev-finance.png'
+    icon: '/images/sections/Expertise/devFinance.png'
   },
   { 
     id: 'investment', 
     titleKey: 'investment',
-    icon: '/images/icon-investment.png'
+    icon: '/images/sections/Expertise/CapitalPrive.png'
   },
   { 
     id: 'green', 
     titleKey: 'green',
-    icon: '/images/icon-green.png'
+    icon: '/images/sections/Expertise/FinanceVerte.png'
   },
   { 
     id: 'digital', 
     titleKey: 'digital',
-    icon: '/images/icon-digital.png'
+    icon: '/images/sections/Expertise/Financedigitale.png'
   },
   { 
     id: 'data', 
     titleKey: 'data',
-    icon: '/images/icon-data.png'
+    icon: '/images/sections/Expertise/analyseData.png'
   }
 ];
 
@@ -204,11 +204,11 @@ function ExpertiseContent() {
               </p>
             </div>
 
-            {/* Deux programmes */}
+            {/* Trois programmes/services */}
             <div className="grid lg:grid-cols-2 gap-8">
-              
+
               {/* Programme 1: Éducation Financière */}
-              <div className="bg-slate-50 border border-slate-200 overflow-hidden">
+              <div className="bg-slate-50 border border-slate-200 overflow-hidden flex flex-col">
                 {/* Header du programme */}
                 <div className="bg-[#2d5a3d] p-6 text-white">
                   <div className="flex items-center gap-3 mb-3">
@@ -245,7 +245,7 @@ function ExpertiseContent() {
                 </div>
 
                 {/* Composantes */}
-                <div className="p-6">
+                <div className="p-6 flex-1">
                   <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
                     {language === 'fr' ? 'Composantes du service' : 'Service Components'}
                   </h4>
@@ -280,7 +280,7 @@ function ExpertiseContent() {
               </div>
 
               {/* Programme 2: Insertion Professionnelle */}
-              <div className="bg-slate-50 border border-slate-200 overflow-hidden">
+              <div className="bg-slate-50 border border-slate-200 overflow-hidden flex flex-col">
                 {/* Header du programme */}
                 <div className="bg-[#2d5a3d] p-6 text-white">
                   <div className="flex items-center gap-3 mb-3">
@@ -298,7 +298,7 @@ function ExpertiseContent() {
                     </div>
                   </div>
                   <p className="text-white/80 text-sm">
-                    {language === 'fr' 
+                    {language === 'fr'
                       ? 'Renforcement des capacités et préparation aux métiers de la finance et du développement'
                       : 'Capacity building and preparation for finance and development careers'}
                   </p>
@@ -319,7 +319,7 @@ function ExpertiseContent() {
                 </div>
 
                 {/* Composantes */}
-                <div className="p-6">
+                <div className="p-6 flex-1">
                   <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
                     {language === 'fr' ? 'Composantes du service' : 'Service Components'}
                   </h4>
@@ -352,6 +352,103 @@ function ExpertiseContent() {
                   </p>
                 </div>
               </div>
+
+              {/* Programme 3: Focus Marchés Publics & Appels d’Offres */}
+              <div className="bg-slate-50 border border-slate-200 overflow-hidden flex flex-col">
+                {/* Header du programme */}
+                <div className="bg-[#2d5a3d] p-6 text-white">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                      {/* Simple briefcase icon */}
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7V6a4 4 0 00-8 0v1M6.5 12h11M3 10.5V17a2 2 0 002 2h14a2 2 0 002-2v-6.5a2 2 0 00-2-2h-14a2 2 0 00-2 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">
+                        {language === 'fr' ? 'Focus Marchés Publics & Appels d’Offres Internationaux' : 'Focus on Public Procurement & International Tenders'}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-white/80 text-sm">
+                    {language === 'fr'
+                      ? 'Appui technique aux cabinets de conseil. Assistance spécialisée pour les dossiers d’appels d’offres : analyse des TdRs, rédaction structurée, méthodologies conformes aux standards institutionnels (BAD/BM/UE), budgets et ingénierie financière, adaptation profils (CVs), matrices et qualité rédactionnelle.'
+                      : 'Technical support to consulting firms. Specialized assistance for tender packages: ToR analysis, structured writing, methodologies aligned with institutional standards (AfDB/WB/EU), budgeting and financial engineering, CV/profile adaptation, matrices and editorial quality.'}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <div className="p-6 border-b border-slate-200">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                    {language === 'fr'
+                      ? 'Collaboration flexible en sous-traitance technique ou partenariat stratégique avec les cabinets de conseil nationaux et internationaux.'
+                      : 'Flexible collaboration as technical subcontractor or strategic partner with national and international consulting firms.'}
+                  </p>
+                </div>
+
+                {/* Composantes */}
+                <div className="p-6 flex-1">
+                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                    {language === 'fr' ? 'Composantes du service' : 'Service Components'}
+                  </h4>
+                  <div className="space-y-2">
+                    {/* Revue technique projets */}
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr'
+                        ? 'Revue technique des Projets de Soumission'
+                        : 'Technical review of submission projects'}
+                    </div>
+                    {/* Sous-composantes Revue technique */}
+                    <ul className="list-inside ml-8 text-xs text-slate-50 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                      <li>- {language === 'fr' ? 'Cohérence & conformité' : 'Consistency & compliance'}</li>
+                      <li>- {language === 'fr' ? 'Calendrier des Livrables' : 'Deliverable schedules'}</li>
+                      <li>- {language === 'fr' ? 'Tableau de Contributions Experts' : 'Expert Contributions Table'}</li>
+                      <li>- {language === 'fr' ? 'Diagramme GANT' : 'GANTT Chart'}</li>
+                    </ul>
+                    {/* Structuration méthodologique */}
+                    <div className="flex items-center gap-3 p-3 bg-[#a8c5a0] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr'
+                        ? 'Structuration méthodologique propre à chaque Projet'
+                        : 'Project-specific methodological structuring'}
+                    </div>
+                    <ul className="list-inside ml-8 text-xs text-slate-700 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                      <li>- {language === 'fr' ? 'Attendus institutionnels' : 'Institutional expectations'}</li>
+                    </ul>
+                    {/* Optimisation des CVs */}
+                    <div className="flex items-center gap-3 p-3 bg-[#c8dcc4] text-slate-900 text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                      {language === 'fr'
+                        ? 'Optimisation des CVs & références'
+                        : 'CV & references optimization'}
+                    </div>
+                    <ul className="list-inside ml-8 text-xs text-slate-700 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                      <li>- {language === 'fr' ? 'Base de données de Consultants Experts' : 'Expert Consultants Database'}</li>
+                    </ul>
+                    {/* Montage financier */}
+                    <div className="flex items-center gap-3 p-3 bg-[#2d5a3d] text-white text-sm font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0" />
+                      {language === 'fr'
+                        ? 'Montage financier'
+                        : 'Financial structuring'}
+                    </div>
+                    <ul className="list-inside ml-8 text-xs text-slate-50 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                      <li>- {language === 'fr' ? 'Taux hommes (Experts)/mois, simulations, barèmes bailleurs, alignement aux contributions' : 'Man/month expert rates, simulations, donor scales, contribution alignment'}</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                {/* Note */}
+                <div className="px-6 pb-6">
+                  <p className="text-xs text-slate-500 italic">
+                    {language === 'fr'
+                      ? 'Assistance spécifiquement orientée sur la réussite des appels d’offres BAD/BM/UE dans le respect des standards internationaux.'
+                      : 'Assistance specifically focused on successful AfDB/WB/EU tenders in accordance with international standards.'}
+                  </p>
+                </div>
+              </div>
+
             </div>
 
             {/* CTA Section */}

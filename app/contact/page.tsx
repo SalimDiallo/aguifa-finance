@@ -78,8 +78,8 @@ function ContactContent() {
                   {/* Email */}
                   <div>
                     <h3 className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">Email</h3>
-                    <a href="mailto:info@aguifa.org" className="text-slate-900 hover:text-slate-600 transition-colors">
-                      info@aguifa.org
+                    <a href="mailto:info@aguifa-finance.com" className="text-slate-900 hover:text-slate-600 transition-colors">
+                       info@aguifa-finance.com
                     </a>
                   </div>
 
@@ -128,7 +128,7 @@ function ContactContent() {
               {language === 'fr' ? 'Notre localisation - Bureau Guinée' : 'Our Location - Guinea Office'}
             </h3>
           </div>
-          <div className="w-full h-[400px] lg:h-[500px]">
+          <div className="w-full h-[400px] lg:h-[500px] relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15823.95076977493!2d-13.6824!3d9.535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd06f7c9e6f0b%3A0x7c4d5f8e3a9b2c1d!2sLambagui%2C%20Conakry%2C%20Guinea!5e0!3m2!1sen!2s!4v1705000000000!5m2!1sen!2s"
               width="100%"
@@ -137,9 +137,12 @@ function ContactContent() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="AGUIFA Guinea Office - Conakry Lambagui"
+              title="AGUIFA Guinea Office - Conakry Lambagny"
               className="grayscale hover:grayscale-0 transition-all duration-500"
             />
+            <div className="absolute bottom-4 left-4 bg-white/90 rounded px-4 py-2 shadow text-slate-900 text-sm font-medium">
+              Fossidet, Yattayah, Commune de Lambagny, Conakry - Guinea
+            </div>
           </div>
         </section>
       </main>

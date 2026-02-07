@@ -8,27 +8,27 @@ import Image from 'next/image';
 const services = [
   {
     id: 'development',
-    icon: '/images/icon-dev-finance.png',
+    icon: '/images/sections/Expertise/devFinance.png',
     serviceKey: 'devFinance',
   },
   {
     id: 'investment',
-    icon: '/images/icon-investment.png',
+    icon: '/images/sections/Expertise/CapitalPrive.png',
     serviceKey: 'investment',
   },
   {
     id: 'digital',
-    icon: '/images/icon-digital.png',
+    icon: '/images/sections/Expertise/Financedigitale.png',
     serviceKey: 'digital',
   },
   {
     id: 'data',
-    icon: '/images/icon-data.png',
+    icon: '/images/sections/Expertise/analyseData.png',
     serviceKey: 'data',
   },
   {
     id: 'green',
-    icon: '/images/icon-green.png',
+    icon: '/images/sections/Expertise/FinanceVerte.png',
     serviceKey: 'green',
   }
 ];

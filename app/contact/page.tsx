@@ -101,7 +101,7 @@ function ContactContent() {
                     <div className="flex gap-3">
                       {/* LinkedIn */}
                       <a 
-                        href={t.contact.linkdIn}
+                        href={siteConfig.linkdIn}
                         className="w-10 h-10 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-400 transition-colors"
                         aria-label="LinkedIn"
                       >

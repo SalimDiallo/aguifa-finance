@@ -198,7 +198,7 @@ export const translations = {
       },
       locations: {
         morocco: "Rue Aguelmane Sidi Ali, Agdal, Rabat - Maroc",
-        guinea: "Fossidet, Yattayah, Commune de Lambagny, Conakry - Guinée",
+        guinea: "Fossidet, Yattayah, Commune de Sofoniai, Conakry - Guinée",
         moroccoShort: "Rabat, Agdal",
         guineaShort: "Conakry, Lambagny",
       },
@@ -422,7 +422,7 @@ export const translations = {
       },
       locations: {
         morocco: "Rue Aguelmane Sidi Ali, Agdal, Rabat - Morocco",
-        guinea: "Fossidet, Yattayah, Commune de Lambagny, Conakry - Guinea",
+        guinea: "Fossidet, Yattayah, Commune de Sofoniai, Conakry - Guinea",
         moroccoShort: "Rabat, Agdal",
         guineaShort: "Conakry, Lambagny",
       },

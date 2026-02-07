@@ -14,18 +14,14 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 relative">
+            <div className="flex items-center gap-3">
+              <div className="w-24 h-10 p-2 relative overflow-hidden rounded-sm bg-white mb-4">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/Logo.png"
                   alt="AGUIFA Logo"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div>
-                <span className="text-lg font-semibold tracking-wide">AGUIFA</span>
-                <div className="text-xs tracking-wider uppercase text-slate-400">Dev Finance</div>
               </div>
             </div>
            

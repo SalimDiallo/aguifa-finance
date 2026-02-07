@@ -9,12 +9,12 @@ export default function Contact() {
   const contactInfo = [
     {
       label: t.contact.offices.morocco,
-      value: t.contact.locations.moroccoShort,
+      value: t.contact.locations.morocco,
       href: null,
     },
     {
       label: t.contact.offices.guinea,
-      value: t.contact.locations.guineaShort,
+      value: t.contact.locations.guinea,
       href: null,
     },
     {
@@ -24,8 +24,8 @@ export default function Contact() {
     },
     {
       label: t.contact.emailContact,
-      value: 'info@aguifa.org',
-      href: 'mailto:info@aguifa.org',
+      value: 'info@aguifa-finance.com',
+      href: 'mailto:info@aguifa-finance.com',
     },
   ];
 

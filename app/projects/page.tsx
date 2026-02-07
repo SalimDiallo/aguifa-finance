@@ -49,7 +49,7 @@ const projects: ProjectItem[] = [
   },
   {
     id: 3,
-    image: '/images/sections/Projects/AESTAP.jpg',
+    image: '/images/sections/Projects/AESTAP.png',
     title: 'AESTAP (Africa Energy Sector Technical Assistance Program)',
     titleEn: 'AESTAP (Africa Energy Sector Technical Assistance Program)',
     subtitle: undefined,

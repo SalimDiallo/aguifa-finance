@@ -22,6 +22,36 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
+  {
+    id: 'pema',
+    name: 'Pema Guilavogui',
+    role: 'Directeur Associé Politique Publique et Developpement Durable',
+    roleEn: 'Associate Director - Public Policy and Sustainable Development',
+    shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
+    shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
+    fullBio: [
+      'Son parcours s\'est construit au cœur de l\'appareil étatique et des institutions financières internationales.',
+      'Il a occupé des fonctions stratégiques au Ministère du Plan et de la Coopération Internationale, notamment comme Chef de la Division Études et Stratégies, puis comme Secrétaire Général, où il a piloté l\'élaboration, l\'évaluation et la supervision des cadres stratégiques nationaux (PNDES 2015–2020 et 2020–2025), assuré la cohérence intersectorielle des politiques publiques et conduit la coordination technique avec les bailleurs internationaux.',
+      'Sur le plan multilatéral, il a représenté la Guinée en tant que Directeur Exécutif auprès de la Banque Islamique de Développement, participant aux travaux du Conseil d\'Administration et aux décisions relatives aux financements et projets de développement.',
+      'Il exerce également des responsabilités de gouvernance en tant qu\'Administrateur du Port Autonome de Conakry, renforçant son exposition aux enjeux d\'infrastructures, de logistique, de commerce et de gestion d\'actifs publics.',
+    ],
+    fullBioEn: [
+      'His career was built at the heart of the state apparatus and international financial institutions.',
+      'He held strategic positions at the Ministry of Planning and International Cooperation, notably as Head of the Studies and Strategies Division, then as Secretary General, where he led the development, evaluation and supervision of national strategic frameworks (PNDES 2015–2020 and 2020–2025), ensured cross-sectoral coherence of public policies and conducted technical coordination with international donors.',
+      'At the multilateral level, he represented Guinea as Executive Director at the Islamic Development Bank, participating in Board proceedings and decisions on financing and development projects.',
+      'He also exercises governance responsibilities as Administrator of the Conakry Autonomous Port, strengthening his exposure to infrastructure, logistics, trade and public asset management issues.',
+    ],
+    education: [
+      'Master en Public Affairs (University of Washington, Seattle)',
+      'Licence et Master en économie et politiques publiques (Université Mohammed V de Rabat)',
+    ],
+    educationEn: [
+      'Master in Public Affairs (University of Washington, Seattle)',
+      'Bachelor\'s and Master\'s in Economics and Public Policy (Mohammed V University, Rabat)',
+    ],
+    image: '/images/sections/Team/h.jpg',
+    linkedin: '#',
+  },
    {
     id: 'joseph',
     name: 'Joseph Gougna',
@@ -54,36 +84,7 @@ const teamMembers: TeamMember[] = [
     image: '/images/sections/Team/gnouma.jpg',
     linkedin: '#',
   },
-  {
-    id: 'pema',
-    name: 'Pema Guilavogui',
-    role: 'Directeur Associé Politique Publique et Developpement Durable',
-    roleEn: 'Associate Director - Public Policy and Sustainable Development',
-    shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
-    shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
-    fullBio: [
-      'Son parcours s\'est construit au cœur de l\'appareil étatique et des institutions financières internationales.',
-      'Il a occupé des fonctions stratégiques au Ministère du Plan et de la Coopération Internationale, notamment comme Chef de la Division Études et Stratégies, puis comme Secrétaire Général, où il a piloté l\'élaboration, l\'évaluation et la supervision des cadres stratégiques nationaux (PNDES 2015–2020 et 2020–2025), assuré la cohérence intersectorielle des politiques publiques et conduit la coordination technique avec les bailleurs internationaux.',
-      'Sur le plan multilatéral, il a représenté la Guinée en tant que Directeur Exécutif auprès de la Banque Islamique de Développement, participant aux travaux du Conseil d\'Administration et aux décisions relatives aux financements et projets de développement.',
-      'Il exerce également des responsabilités de gouvernance en tant qu\'Administrateur du Port Autonome de Conakry, renforçant son exposition aux enjeux d\'infrastructures, de logistique, de commerce et de gestion d\'actifs publics.',
-    ],
-    fullBioEn: [
-      'His career was built at the heart of the state apparatus and international financial institutions.',
-      'He held strategic positions at the Ministry of Planning and International Cooperation, notably as Head of the Studies and Strategies Division, then as Secretary General, where he led the development, evaluation and supervision of national strategic frameworks (PNDES 2015–2020 and 2020–2025), ensured cross-sectoral coherence of public policies and conducted technical coordination with international donors.',
-      'At the multilateral level, he represented Guinea as Executive Director at the Islamic Development Bank, participating in Board proceedings and decisions on financing and development projects.',
-      'He also exercises governance responsibilities as Administrator of the Conakry Autonomous Port, strengthening his exposure to infrastructure, logistics, trade and public asset management issues.',
-    ],
-    education: [
-      'Master en Public Affairs (University of Washington, Seattle)',
-      'Licence et Master en économie et politiques publiques (Université Mohammed V de Rabat)',
-    ],
-    educationEn: [
-      'Master in Public Affairs (University of Washington, Seattle)',
-      'Bachelor\'s and Master\'s in Economics and Public Policy (Mohammed V University, Rabat)',
-    ],
-    image: '/images/sections/Team/h.jpg',
-    linkedin: '#',
-  },
+
   {
     id: 'juliette',
     name: 'Juliette Rioual',

@@ -118,7 +118,7 @@ function ExpertiseContent() {
                         {/* Icône au centre (sur la ligne) */}
                         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
                           <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-slate-100 border-2 border-slate-300 flex items-center justify-center">
-                            <div className="relative w-10 h-10 lg:w-12 lg:h-12">
+                            <div className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full">
                               <Image
                                 src={area.icon}
                                 alt={serviceData.title}
@@ -400,7 +400,7 @@ function ExpertiseContent() {
                         : 'Technical review of submission projects'}
                     </div>
                     {/* Sous-composantes Revue technique */}
-                    <ul className="list-inside ml-8 text-xs text-slate-50 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                    <ul className="list-inside ml-8 text-xs text-slate-600 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
                       <li>- {language === 'fr' ? 'Cohérence & conformité' : 'Consistency & compliance'}</li>
                       <li>- {language === 'fr' ? 'Calendrier des Livrables' : 'Deliverable schedules'}</li>
                       <li>- {language === 'fr' ? 'Tableau de Contributions Experts' : 'Expert Contributions Table'}</li>
@@ -433,7 +433,7 @@ function ExpertiseContent() {
                         ? 'Montage financier'
                         : 'Financial structuring'}
                     </div>
-                    <ul className="list-inside ml-8 text-xs text-slate-50 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
+                    <ul className="list-inside ml-8 text-xs text-slate-600 mb-1 space-y-1" style={{lineHeight: '1.35'}}>
                       <li>- {language === 'fr' ? 'Taux hommes (Experts)/mois, simulations, barèmes bailleurs, alignement aux contributions' : 'Man/month expert rates, simulations, donor scales, contribution alignment'}</li>
                     </ul>
                   </div>
@@ -441,7 +441,7 @@ function ExpertiseContent() {
                 
                 {/* Note */}
                 <div className="px-6 pb-6">
-                  <p className="text-xs text-slate-500 italic">
+                  <p className="text-xs text-slate-600 italic">
                     {language === 'fr'
                       ? 'Assistance spécifiquement orientée sur la réussite des appels d’offres BAD/BM/UE dans le respect des standards internationaux.'
                       : 'Assistance specifically focused on successful AfDB/WB/EU tenders in accordance with international standards.'}

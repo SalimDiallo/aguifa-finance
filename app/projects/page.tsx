@@ -25,7 +25,7 @@ interface ProjectItem {
 const projects: ProjectItem[] = [
   {
     id: 1,
-    image: '/images/sections/Projects/CommodityBusket.jpg',
+    image: '/images/sections/Projects/CommodityBusket.png',
     title: 'Commodities Bucket (Panier de Matières premières)',
     titleEn: 'Commodities Bucket',
     subtitle: undefined,
@@ -37,7 +37,7 @@ const projects: ProjectItem[] = [
   },
   {
     id: 2,
-    image: '/images/sections/Projects/SWEED2.jpg',
+    image: '/images/sections/Projects/SWEED2.png',
     title: "SWEED II (Sahel Women's Empowerment and Demographic Dividend)",
     titleEn: "SWEED II (Sahel Women's Empowerment and Demographic Dividend)",
     subtitle: undefined,
@@ -73,7 +73,7 @@ const projects: ProjectItem[] = [
   },
   {
     id: 5,
-    image: '/images/sections/Projects/ElectricityRegulatoryIndex.jpg',
+    image: '/images/sections/Projects/ElectricityRegulatoryIndex.png',
     title: 'ERI (Electricity Regulatory Index for Africa)',
     titleEn: 'ERI (Electricity Regulatory Index for Africa)',
     subtitle: undefined,
@@ -85,7 +85,7 @@ const projects: ProjectItem[] = [
   },
   {
     id: 6,
-    image: '/images/sections/Projects/AfDBAnnualMeeting.jpg',
+    image: '/images/sections/Projects/AfDBAnnualMeeting.png',
     title: 'AfDB Annual Meeting',
     titleEn: 'AfDB Annual Meeting',
     subtitle: undefined,
@@ -137,7 +137,7 @@ function ProjectsContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-slate-50">
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
@@ -159,39 +159,46 @@ function ProjectsContent() {
           </div>
         </section>
 
-        {/* Projects List */}
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-12">
+        {/* Projects Grid Emphasis on Images */}
+        <section className="py-20 lg:py-28 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {projects.map((project) => (
-                <div key={project.id} className="flex flex-col md:flex-row gap-6 md:items-center pb-6 border-b border-slate-200 last:border-b-0">
+                <div
+                  key={project.id}
+                  className="bg-white rounded-sm  transition flex flex-col overflow-hidden border border-slate-100"
+                  style={{ minHeight: 420 }}
+                >
                   {project.image && (
-                    <div className="flex-shrink-0 w-full md:w-48 h-32 md:h-36 overflow-hidden relative bg-slate-100">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative w-full h-56 md:h-64 lg:h-60">
+                      <Image
                         src={project.image}
                         alt={language === "fr" ? project.title : project.titleEn}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        className="object-cover object-center transition-transform duration-300 hover:scale-105"
+                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+                        priority={project.id <= 3}
                       />
-                    </div>
-                  )}
-                  <div className="flex-1 flex flex-col gap-2">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-900">
-                        {language === "fr" ? project.title : project.titleEn}
-                      </h3>
+                      {/* Year badge overlay */}
                       {project.year && (
-                        <span className="ml-2 text-xs bg-slate-900 text-white px-2.5 py-1 rounded-full">
+                        <div className="absolute top-4 left-4 bg-slate-900/80 text-white text-xs px-3 py-1 rounded-full shadow">
                           {project.year}
-                        </span>
+                        </div>
                       )}
                     </div>
-                    {(language === "fr" ? project.subtitle : project.subtitleEn) && (
-                      <div className="font-medium text-slate-600">
-                        {language === "fr" ? project.subtitle : project.subtitleEn}
-                      </div>
-                    )}
-                    <p className="text-slate-700 whitespace-pre-line">
+                  )}
+                  <div className="flex-1 px-6 py-6 flex flex-col gap-2">
+                    <div>
+                      <h3 className="font-semibold text-lg md:text-xl text-slate-900 mb-1">
+                        {language === "fr" ? project.title : project.titleEn}
+                      </h3>
+                      {(language === "fr" ? project.subtitle : project.subtitleEn) && (
+                        <div className="font-medium text-slate-600 mb-1">
+                          {language === "fr" ? project.subtitle : project.subtitleEn}
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-sm text-slate-700 opacity-80 mt-1">
                       {language === "fr" ? project.description : project.descriptionEn}
                     </p>
                   </div>
@@ -205,8 +212,6 @@ function ProjectsContent() {
     </div>
   );
 }
-
-
 
 export default function ProjectsPage() {
   return (

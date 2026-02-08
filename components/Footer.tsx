@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="w-24 h-10 p-2 relative overflow-hidden rounded-sm bg-white mb-4">
+              <div className="h-10 w-36 py-4 relative overflow-hidden rounded-sm bg-white mb-4">
                 <Image
                   src="/images/Logo.png"
                   alt="AGUIFA Logo"

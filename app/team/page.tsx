@@ -25,8 +25,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'pema',
     name: 'Pema Guilavogui',
-    role: 'Fondateur Associé - Politique Publique et Developpement Durable',
-    roleEn: 'Founding Partner - Public Policy and Sustainable Development',
+    role: 'Directeur Associé - Politique Publique et Developpement Durable',
+    roleEn: 'Associate Director - Public Policy and Sustainable Development',
     shortBio: 'Haut cadre de l\'administration publique guinéenne, Pema Guilavogui cumule plus de quinze années d\'expérience en planification du développement, analyse économique, politiques publiques et coordination institutionnelle.',
     shortBioEn: 'Senior executive of the Guinean public administration, Pema Guilavogui has over fifteen years of experience in development planning, economic analysis, public policies and institutional coordination.',
     fullBio: [
@@ -49,7 +49,7 @@ const teamMembers: TeamMember[] = [
       'Master in Public Affairs (University of Washington, Seattle)',
       'Bachelor\'s and Master\'s in Economics and Public Policy (Mohammed V University, Rabat)',
     ],
-    image: '/images/sections/Team/h.jpg',
+    image: '/images/sections/Team/homme.png',
     // linkedin: '#',
   },
    {
@@ -81,7 +81,7 @@ const teamMembers: TeamMember[] = [
       'Bachelor\'s in Banking and Finance',
       'Master in Public Policy and Governance (in progress)',
     ],
-    image: '/images/sections/Team/gnouma.jpg',
+    image: '/images/sections/Team/gnouma.png',
     linkedin: '#',
   },
 
@@ -116,7 +116,7 @@ const teamMembers: TeamMember[] = [
       'International MBA at Sogang University (Seoul)',
       'AMF Certified',
     ],
-    image: '/images/sections/Team/f.jpg',
+    image: '/images/sections/Team/femme.png',
     linkedin: '#',
   },
   {
@@ -152,7 +152,7 @@ const teamMembers: TeamMember[] = [
       'Law training',
       'Technical expertise: R, SPSS, SQL, Advanced Excel, Power BI, Tableau, KoboToolbox, CommCare, LogAlto',
     ],
-    image: '/images/sections/Team/h.jpg',
+    image: '/images/sections/Team/homme.png',
     linkedin: '#',
   },
 ];

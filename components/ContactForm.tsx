@@ -22,7 +22,7 @@ export default function ContactForm({
   useSubjectSelect = false,
   messageRows = 5,
   className = '',
-  formId = 'rebpdhdgux8', // Replace with your Forminit Form ID
+  formId = 'j09jkmkjdoc', // Replace with your Forminit Form ID
 }: ContactFormProps) {
   const { t } = useLanguage();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');

@@ -193,6 +193,7 @@ function TeamMemberCard({ member, isExpanded, onToggle }: {
               />
             </div>
             
+            
             {/* LinkedIn sous la photo */}
             {/* {member.linkedin && (
               <a 
